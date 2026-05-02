@@ -1,0 +1,16 @@
+version: "3.2"
+
+services:
+  flask:
+    build: .
+    ports:
+      - 5005:5005
+
+  ejabberd:
+    image: ghcr.io/processone/ejabberd
+    ports:
+      - 5222:5222
+      - 5280:5280
+      - 5443:5443
+    volumes:
+      - ./conf/ejabberd.yml:/opt/ejabberd/conf/ejabberd.yml
