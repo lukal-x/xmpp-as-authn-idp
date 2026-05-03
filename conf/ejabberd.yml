@@ -15,7 +15,7 @@
 ###
 
 define_macro:
-  HOST: localhost
+  HOST: unexposed-jabber
   ## ADMIN: ... # set by /usr/local/bin/ejabberdctl
   PORT_C2S: 5222
   PORT_C2S_TLS: 5223

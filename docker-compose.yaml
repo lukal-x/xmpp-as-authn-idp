@@ -8,13 +8,10 @@ services:
     ports:
       - 5005:5005
 
-  ejabberd:
+  unexposed-jabber:
     build:
       context: .
       dockerfile: Dockerfile.ejabberd
-    ports:
-      - 5222:5222
-      - 5280:5280
-      - 5443:5443
     volumes:
       - ./conf/ejabberd.yml:/opt/ejabberd/conf/ejabberd.yml
+    # ports: [5280:5280] # uncomment for dev/demo purposes, it should generally stay inaccessible

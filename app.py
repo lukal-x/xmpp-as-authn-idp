@@ -8,6 +8,8 @@ import json
 
 from bosh import Bosh, Client
 
+JABBER_SERVER = "unexposed-jabber"
+
 root = Blueprint("root", __name__, url_prefix="", description="Application root")
 
 
@@ -67,6 +69,6 @@ api.register_blueprint(authn)
 
 
 if __name__ == "__main__":
-    client = Client.create("localhost", 5280)
+    client = Client.create(JABBER_SERVER, 5280)
     app.config["BOSH"] = Bosh.greet(client)
     app.run(host="0.0.0.0", port=5005)
