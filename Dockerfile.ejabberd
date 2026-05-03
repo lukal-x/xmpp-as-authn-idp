@@ -1,0 +1,7 @@
+FROM ghcr.io/processone/ejabberd
+
+USER root
+
+RUN apk add --no-cache imagemagick ghostscript-fonts bash
+
+USER ejabberd

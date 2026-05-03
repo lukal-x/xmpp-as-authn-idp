@@ -2,12 +2,16 @@ version: "3.2"
 
 services:
   flask:
-    build: .
+    build:
+      context: .
+      dockerfile: Dockerfile.flask
     ports:
       - 5005:5005
 
   ejabberd:
-    image: ghcr.io/processone/ejabberd
+    build:
+      context: .
+      dockerfile: Dockerfile.ejabberd
     ports:
       - 5222:5222
       - 5280:5280
